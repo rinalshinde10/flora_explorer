@@ -2,7 +2,7 @@ const CATEGORIES = [
 	{
 		id: 1,
 		name: "Rose",
-		colors: ["Red", "Pink", "White"],
+		colors: ["Red,", "Pink,", "White"],
 		festivals: ["Valentine's Day", "Wedding"],
 		theme: "Romantic",
 		cost: 25,
