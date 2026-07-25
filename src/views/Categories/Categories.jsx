@@ -7,42 +7,32 @@ function Categories() {
     <div>
       <h1>Categories</h1>
 
-      {CATEGORIES.map((categoriesObj) => {
-        const {
-          id,
-          name,
-          colors,
-          festivals,
-          theme,
-          cost,
-          categoryType,
-          decoration,
-          useIn,
-          ceremony,
-          rating,
-          reviews,
-          owner,
-        } = categoriesObj;
+      <div className="categories-container">
+        {CATEGORIES.map((categoriesObj) => {
+          const {
+            id,
+            name,
+            colors,
+            cost,
+            rating,
+            reviews,
+            owner,
+          } = categoriesObj;
 
-        return (
-          <Cards
-            key={id}
-            id={id}
-            name={name}
-            colors={colors}
-            festivals={festivals}
-            theme={theme}
-            cost={cost}
-            categoryType={categoryType}
-            decoration={decoration}
-            useIn={useIn}
-            ceremony={ceremony}
-            rating={rating}
-            reviews={reviews}
-            owner={owner}
-          />
-        );
-      })}
+          return (
+            <Cards
+              key={id}
+              id={id}
+              name={name}
+              colors={colors}
+              cost={cost}
+              rating={rating}
+              reviews={reviews}
+              owner={owner}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }

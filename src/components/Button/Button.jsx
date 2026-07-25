@@ -1,9 +1,11 @@
 import "./Button.css";
 
-function Button() {
-    return (
-        <div>Button</div>
-    )
+function Button({ title, onClick }) {
+  return (
+    <button className="btn" onClick={onClick}>
+      {title}
+    </button>
+  );
 }
 
-export default Button
+export default Button;
