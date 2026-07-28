@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button/Button";
 import "./Cards.css";
 import DummyImg from "./flower_pic.png";
@@ -12,31 +13,52 @@ function Cards({
   reviews,
   owner,
 }) {
-
   const navigate = useNavigate();
+
+  const [currentRating, setCurrentRating] = useState(rating);
 
   return (
     <div className="categories-card">
-      <img src={DummyImg} alt="Categories" className="flower_img" />
+      <img src={DummyImg} alt={name} className="flower_img" />
+
+      <div className="rating-info">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <span
+            key={star}
+            className={star <= currentRating ? "star active" : "star"}
+            onClick={() => setCurrentRating(star)}
+          >
+            ★
+          </span>
+        ))}
+      </div>
 
       <h2>{name}</h2>
 
-      <p>Colors: {colors?.join(", ")}</p>
+      <p>
+        <strong>Colors:</strong>
+        <span>{colors?.join(", ")}</span>
+      </p>
 
-      <p>Cost: ₹{cost}</p>
+      <p>
+        <strong>Cost:</strong>
+        <span>₹{cost}</span>
+      </p>
 
-      <p className="rating-info">{rating}/5</p>
+      <p>
+        <strong>Reviews:</strong>
+        <span>{reviews}</span>
+      </p>
 
-      <p>Review: {reviews}</p>
-
-      <p>Owner: {owner?.name}</p>
+      <p>
+        <strong>Owner:</strong>
+        <span>{owner?.name}</span>
+      </p>
 
       <div className="card-actions">
         <Button
           title="Know More"
-          onClick={() => {
-            navigate(`/categories/${id}`);
-          }}
+          onClick={() => navigate(`/categories/${id}`)}
         />
       </div>
     </div>

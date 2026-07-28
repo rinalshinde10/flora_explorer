@@ -1,30 +1,126 @@
-.categories-card{
-    border: 1px solid black;
-    margin: 20px 10px;
-    padding: 10px;
+.categories-card {
+    width: 350px;
+    margin: 20px;
+    padding: 18px;
+    background-color: #fff;
     border-radius: 15px;
-    width: 400px;
-    box-shadow: 1px 1px 4px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1.5px solid rgb(130, 128, 128);
+}
+
+.categories-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.flower_img {
+    
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.categories-card:hover .flower_img {
+    transform: scale(1.05);
+}
+
+.categories-card h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 15px 0;
+    color: #222;
+}
+
+.categories-card p {
+    display: flex;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.categories-card p strong {
+    width: 90px;
+    color: #000;
+}
+
+.categories-card p span {
+    color: #555;
+}
+
+/* Rating */
+
+.rating-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.star {
+    font-size: 30px;
+    color: #d3d3d3;
+    cursor: pointer;
+    margin: 0 3px;
+    transition: 0.3s;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+.star.active {
+    color: gold;
+}
+
+/* Button */
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
-    position: relative;
 }
-.categories-card:hover{
-    box-shadow: 6px 6px 4px 2px rgba(144, 143, 143, 0.2);
+
+.card-actions button:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
 }
-.flower_img{
-    height: 50x;
-    width: 100px;
-}
-.rating-info{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-padding: 10px;
-border-radius: 5px;
-background-color: rgb(225, 231, 237);
-}
-.card-actions{
-    display: contents;
-    justify-content: center;
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .categories-card {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    .flower_img {
+        height: 200px;
+    }
+
+    .categories-card h2 {
+        font-size: 22px;
+    }
+
+    .categories-card p {
+        font-size: 15px;
+    }
+
+    .star {
+        font-size: 26px;
+    }
 }

@@ -2,8 +2,8 @@ const CATEGORIES = [
 	{
 		id: 1,
 		name: "Rose",
-		colors: ["Red,", "Pink,", "White"],
-		festivals: ["Valentine's Day", "Wedding"],
+		colors: ["Red , Pink , White"],
+		festivals: ["Valentine's Day, Wedding"],
 		theme: "Romantic",
 		cost: 25,
 		categoryType: "Cut Flower",
@@ -17,7 +17,7 @@ const CATEGORIES = [
 	{
 		id: 2,
 		name: "Marigold",
-		colors: ["Orange", "Yellow"],
+		colors: ["Orange , Yellow"],
 		festivals: ["Diwali", "Navratri"],
 		theme: "Traditional",
 		cost: 8,
@@ -47,7 +47,7 @@ const CATEGORIES = [
 	{
 		id: 4,
 		name: "Lotus",
-		colors: ["Pink", "White"],
+		colors: ["Pink , White"],
 		festivals: ["Religious"],
 		theme: "Sacred",
 		cost: 30,
@@ -77,7 +77,7 @@ const CATEGORIES = [
 	{
 		id: 6,
 		name: "Tulip",
-		colors: ["Red", "Yellow", "Purple"],
+		colors: ["Red , Yellow , Purple"],
 		festivals: ["Spring Festival"],
 		theme: "Spring",
 		cost: 12,
@@ -92,7 +92,7 @@ const CATEGORIES = [
 	{
 		id: 7,
 		name: "Hibiscus",
-		colors: ["Red", "Pink", "Yellow"],
+		colors: ["Red , Pink , Yellow"],
 		festivals: ["Cultural"],
 		theme: "Tropical",
 		cost: 9,
@@ -122,7 +122,7 @@ const CATEGORIES = [
 	{
 		id: 9,
 		name: "Orchid",
-		colors: ["Purple", "White", "Pink"],
+		colors: ["Purple , White , Pink"],
 		festivals: ["Anniversary", "Corporate"],
 		theme: "Exotic",
 		cost: 45,
@@ -182,7 +182,7 @@ const CATEGORIES = [
 	{
 		id: 13,
 		name: "Peony",
-		colors: ["Pink", "White", "Red"],
+		colors: ["Pink , White , Red"],
 		festivals: ["Wedding"],
 		theme: "Luxurious",
 		cost: 35,
@@ -212,7 +212,7 @@ const CATEGORIES = [
 	{
 		id: 15,
 		name: "Freesia",
-		colors: ["Purple", "Yellow", "White"],
+		colors: ["Purple , Yellow , White"],
 		festivals: ["Spring"],
 		theme: "Delicate",
 		cost: 11,
@@ -227,7 +227,7 @@ const CATEGORIES = [
 	{
 		id: 16,
 		name: "Azalea",
-		colors: ["Pink", "White"],
+		colors: ["Pink , White"],
 		festivals: ["Garden Festival"],
 		theme: "Ornamental",
 		cost: 20,
@@ -257,7 +257,7 @@ const CATEGORIES = [
 	{
 		id: 18,
 		name: "Magnolia",
-		colors: ["White", "Pink"],
+		colors: ["White , Pink"],
 		festivals: ["Spring"],
 		theme: "Statement",
 		cost: 40,
@@ -272,7 +272,7 @@ const CATEGORIES = [
 	{
 		id: 19,
 		name: "Zinnia",
-		colors: ["Pink", "Orange", "Red"],
+		colors: ["Pink , Orange , Red"],
 		festivals: ["Summer Fairs"],
 		theme: "Bright",
 		cost: 6,
@@ -287,7 +287,7 @@ const CATEGORIES = [
 	{
 		id: 20,
 		name: "Gerbera",
-		colors: ["Pink", "Yellow", "White"],
+		colors: ["Pink , Yellow , White"],
 		festivals: ["Birthday"],
 		theme: "Playful",
 		cost: 16,
@@ -317,7 +317,7 @@ const CATEGORIES = [
 	{
 		id: 22,
 		name: "Hyacinth",
-		colors: ["Blue", "Purple", "Pink"],
+		colors: ["Blue , Purple , Pink"],
 		festivals: ["Spring"],
 		theme: "Fragrant",
 		cost: 14,
