@@ -9,6 +9,7 @@
     cursor: pointer;
     overflow: hidden;
     border: 1.5px solid rgb(130, 128, 128);
+    margin-top: 40px;
 }
 
 .categories-card:hover {

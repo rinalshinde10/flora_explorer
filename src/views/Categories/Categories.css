@@ -1,6 +1,17 @@
-.categories-container{
+.categories-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    
+}
+
+.search-container {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.no-flowers-found {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 28px;
 }
