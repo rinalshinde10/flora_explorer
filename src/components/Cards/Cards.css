@@ -16,23 +16,51 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-.flower_img {
-    
-    height: 100px;
-    object-fit: cover;
+
+/* Flower Image Box */
+
+.flower-image-box {
+    width: 100%;
+    height: 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     border-radius: 12px;
-    transition: 0.3s;
+}
+
+
+/* Flower Image */
+
+.flower_img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    transition: 0.3s ease;
 }
 
 .categories-card:hover .flower_img {
     transform: scale(1.05);
 }
 
-.categories-card h2 {
+
+/* Flower Name */
+
+.flower-title {
     text-align: center;
     font-size: 24px;
     margin: 15px 0;
     color: #222;
+}
+
+
+/* Flower Information */
+
+.flower-info {
+    width: 100%;
 }
 
 .categories-card p {
@@ -51,13 +79,14 @@
     color: #555;
 }
 
+
 /* Rating */
 
 .rating-info {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 15px 0;
+    margin: 12px 0;
 }
 
 .star {
@@ -75,6 +104,7 @@
 .star.active {
     color: gold;
 }
+
 
 /* Button */
 
@@ -100,19 +130,27 @@
     transform: scale(1.05);
 }
 
+
 /* Responsive */
 
 @media (max-width: 768px) {
+
     .categories-card {
         width: 90%;
         margin: 15px auto;
     }
 
-    .flower_img {
-        height: 200px;
+    .flower-image-box {
+        height: 100px;
     }
 
-    .categories-card h2 {
+    .flower_img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .flower-title {
         font-size: 22px;
     }
 

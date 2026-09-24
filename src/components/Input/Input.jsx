@@ -1,9 +1,25 @@
 import "./Input.css";
 
-function Input() {
+function Input(
+    {
+        type = "text",
+        placeholder = "Search For Flowers",
+        value = "",
+        onChange = () => { },
+        
+    }
+) {
     return (
-        <div>Input</div>
-    )
+        <div className="input-container">
+            <input
+                type={type}
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
+                className="input-field"
+            />
+        </div>
+    );
 }
 
-export default Input
+export default Input;
