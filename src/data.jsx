@@ -1,3 +1,39 @@
+import Img1 from "./assets/1.jpg";
+import Img2 from "./assets/2.jpg";
+import Img3 from "./assets/3.jpg";
+import Img4 from "./assets/4.jpg";
+import Img5 from "./assets/5.jpg";
+import Img6 from "./assets/6.jpg";
+import Img7 from "./assets/7.jpg";
+import Img8 from "./assets/8.jpg";
+import Img9 from "./assets/9.jpg";
+import Img10 from "./assets/10.jpg";
+import Img11 from "./assets/11.jpg";
+import Img12 from "./assets/12.jpg";
+import Img13 from "./assets/13.jpg";
+import Img14 from "./assets/14.jpg";
+import Img15 from "./assets/15.jpg";
+import Img16 from "./assets/16.jpg";
+import Img17 from "./assets/17.jpg";
+import Img18 from "./assets/18.jpg";
+import Img19 from "./assets/19.jpg";
+import Img20 from "./assets/20.jpg";
+import Img21 from "./assets/21.jpg";
+import Img22 from "./assets/22.jpg";
+import Img23 from "./assets/23.jpg";
+import Img24 from "./assets/24.jpg";
+import Img25 from "./assets/25.jpg";
+import Img26 from "./assets/26.jpg";
+import Img27 from "./assets/27.jpg";
+import Img28 from "./assets/28.jpg";
+import Img29 from "./assets/29.jpg";
+import Img30 from "./assets/30.jpg";
+import Img31 from "./assets/31.jpg";
+import Img32 from "./assets/32.jpg";
+import Img33 from "./assets/33.jpg";
+import Img34 from "./assets/34.jpg";
+
+
 const CATEGORIES = [
 	{
 		id: 1,
@@ -13,6 +49,7 @@ const CATEGORIES = [
 		rating: 4.8,
 		reviews: 342,
 		owner: { name: "Asha Flowers", phone: "+1-555-0101", email: "asha@flora.com" }
+		
 	},
 	{
 		id: 2,

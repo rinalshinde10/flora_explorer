@@ -19,38 +19,116 @@ function Categories_Details() {
   }, [id]);
 
   return (
-    <div>
-      <h1>Flower Details</h1>
+    <div className="details-page">
 
-      <img src={DummyImg} alt="Categories" className="flower-img" />
+      {/* Top Section */}
+      <div className="top-section">
+       
 
-      <h2>{categories_Details.name}</h2>
+        <img
+          src={DummyImg}
+          alt="Flower"
+          className="flower-img"
+        />
 
-      <p>Colors : {categories_Details.colors?.join(", ")}</p>
+        <h2 className="flower-name">
+          {categories_Details.name}
+        </h2>
+      </div>
 
-      <p>Festivals : {categories_Details.festivals?.join(", ")}</p>
+      {/* Cards */}
+      <div className="cards-container">
 
-      <p>Theme : {categories_Details.theme}</p>
+        {/* Flower Details Card */}
+        <div className="details-card">
 
-      <p>Cost : ₹{categories_Details.cost}</p>
+          <h2 className="card-heading">
+            🌼 Flower Information
+          </h2>
 
-      <p>Category Type : {categories_Details.categoryType}</p>
+          <div className="info-box">
 
-      <p>Decoration : {categories_Details.decoration}</p>
+            <p>
+              <span>🎨 Colors :</span>
+              {categories_Details.colors?.join(", ")}
+            </p>
 
-      <p>Use In : {categories_Details.useIn?.join(", ")}</p>
+            <p>
+              <span>🎉 Festivals :</span>
+              {categories_Details.festivals?.join(", ")}
+            </p>
 
-      <p>Ceremony : {categories_Details.ceremony?.join(", ")}</p>
+            <p>
+              <span>🎭 Theme :</span>
+              {categories_Details.theme}
+            </p>
 
-      <p>Rating : ⭐ {categories_Details.rating}</p>
+            <p>
+              <span>💰 Cost :</span>
+              ₹{categories_Details.cost}
+            </p>
 
-      <p>Reviews : {categories_Details.reviews}</p>
+            <p>
+              <span>📂 Category :</span>
+              {categories_Details.categoryType}
+            </p>
 
-      <p>Owner Name : {categories_Details.owner?.name}</p>
+            <p>
+              <span>🌺 Decoration :</span>
+              {categories_Details.decoration}
+            </p>
 
-      <p>Owner Phone : {categories_Details.owner?.phone}</p>
+            <p>
+              <span>🏡 Use In :</span>
+              {categories_Details.useIn?.join(", ")}
+            </p>
 
-      <p>Owner Email : {categories_Details.owner?.email}</p>
+            <p>
+              <span>💍 Ceremony :</span>
+              {categories_Details.ceremony?.join(", ")}
+            </p>
+
+            <p>
+              <span>⭐ Rating :</span>
+              {categories_Details.rating}
+            </p>
+
+            <p>
+              <span>📝 Reviews :</span>
+              {categories_Details.reviews}
+            </p>
+
+          </div>
+        </div>
+
+        {/* Owner Card */}
+        <div className="owner-card">
+
+          <h2>👨‍🌾 Owner Details</h2>
+
+          <div className="owner-info">
+
+            <p>
+              <span>👤 Name :</span>
+              {categories_Details.owner?.name}
+            </p>
+
+            <p>
+              <span>📞 Phone :</span>
+              {categories_Details.owner?.phone}
+            </p>
+
+            <p>
+              <span>📧 Email :</span>
+              {categories_Details.owner?.email}
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   );
 }
