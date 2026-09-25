@@ -3,11 +3,12 @@ import "./Home.css";
    import Footer from "../../components/Footer/Footer";
    import Image from "./home.jpg";
    import Image1 from "./home_1.jpg";
+   import Heading from "../../components/Heading/Heading";
 function Home() {
     return(
         <div className="home-page">
             <Navbar />
-            <h1 className="title">Flora Explorer</h1>
+            <Heading  subtitle="Flora Explorer" />
            <div className="img-container"> <img src={Image} alt="Flower" className="home-img" />
             <img src={Image1} alt="Flower" className="home-img-1" /></div>
             <p className="msg">

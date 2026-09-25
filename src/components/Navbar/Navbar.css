@@ -15,6 +15,12 @@
     box-sizing: border-box;
 
     border-radius: 0px 0px 10px 10px;
+
+    /* Fixed Navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 
@@ -73,7 +79,7 @@
 }
 
 
-/* Categories and About */
+/* Home, Categories and About */
 .navbar-links a {
     text-decoration: none;
 

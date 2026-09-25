@@ -6,6 +6,9 @@
     background-color: #fcf2f5;
 
     box-sizing: border-box;
+
+    /* Space for fixed navbar */
+    padding-top: 60px;
 }
 
 
