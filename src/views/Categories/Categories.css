@@ -1,17 +1,92 @@
-.categories-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+
+.categories-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background-color: #fcf2f5;
+
+    box-sizing: border-box;
 }
+
+
+/* SEARCH */
 
 .search-container {
     margin-top: 40px;
+
     width: 100%;
 }
 
+
+/* FILTERS */
+
+.filters-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+    margin-bottom: 30px;
+}
+
+
+/* EACH FILTER */
+
+.filter-box {
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* CLEAR FILTER BUTTON */
+
+.clear-filter-button {
+    height: 40px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+/* FLOWER CARDS */
+
+.categories-container {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-around;
+
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* NO FLOWERS FOUND */
+
 .no-flowers-found {
     width: 100%;
+
     text-align: center;
+
     margin-top: 50px;
+
     font-size: 28px;
 }
+

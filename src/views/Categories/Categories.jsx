@@ -4,6 +4,8 @@ import Cards from "../../components/Cards/Cards";
 import { useEffect, useState } from "react";
 import Input from "./../../components/Input/Input";
 import Select from "./../../components/Select/Select";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 function Categories() {
   const [categories, setCategories] = useState(CATEGORIES);
@@ -17,7 +19,6 @@ function Categories() {
 
   // Convert colors into separate values
   const getColors = (colors) => {
-
     if (Array.isArray(colors)) {
       return colors
         .flatMap((color) => String(color).split(","))
@@ -33,40 +34,31 @@ function Categories() {
 
   // FILTER DATA
   useEffect(() => {
-
     let filteredCategories = [...CATEGORIES];
 
     // SEARCH FILTER
     if (searchTerm.trim() !== "") {
+      const searchText = searchTerm.toLowerCase().trim();
 
-      const searchText = searchTerm
-        .toLowerCase()
-        .trim();
+      filteredCategories = filteredCategories.filter((category) => {
+        const name = String(category.name).toLowerCase();
 
-      filteredCategories = filteredCategories.filter(
-        (category) => {
+        const colors = getColors(category.colors)
+          .join(" ")
+          .toLowerCase();
 
-          const name = String(category.name)
-            .toLowerCase();
+        const cost = String(category.cost);
 
-          const colors = getColors(category.colors)
-            .join(" ")
-            .toLowerCase();
-
-          const cost = String(category.cost);
-
-          return (
-            name.includes(searchText) ||
-            colors.includes(searchText) ||
-            cost.includes(searchText)
-          );
-        }
-      );
+        return (
+          name.includes(searchText) ||
+          colors.includes(searchText) ||
+          cost.includes(searchText)
+        );
+      });
     }
 
     // FLOWER NAME FILTER
     if (filteredValues.name !== "") {
-
       filteredCategories = filteredCategories.filter(
         (category) =>
           String(category.name).toLowerCase() ===
@@ -76,25 +68,19 @@ function Categories() {
 
     // COLOR FILTER
     if (filteredValues.colors !== "") {
+      filteredCategories = filteredCategories.filter((category) => {
+        const categoryColors = getColors(category.colors);
 
-      filteredCategories = filteredCategories.filter(
-        (category) => {
-
-          const categoryColors =
-            getColors(category.colors);
-
-          return categoryColors.some(
-            (color) =>
-              color.toLowerCase() ===
-              filteredValues.colors.toLowerCase()
-          );
-        }
-      );
+        return categoryColors.some(
+          (color) =>
+            color.toLowerCase() ===
+            filteredValues.colors.toLowerCase()
+        );
+      });
     }
 
     // COST FILTER
     if (filteredValues.cost !== "") {
-
       filteredCategories = filteredCategories.filter(
         (category) =>
           Number(category.cost) ===
@@ -103,24 +89,20 @@ function Categories() {
     }
 
     setCategories(filteredCategories);
-
   }, [searchTerm, filteredValues]);
 
   // UNIQUE FLOWER NAME LIST
   const nameList = [
     ...new Set(
-      CATEGORIES.map(
-        (category) => category.name
-      )
+      CATEGORIES.map((category) => category.name)
     )
   ];
 
   // UNIQUE COLOR LIST
   const colorsList = [
     ...new Set(
-      CATEGORIES.flatMap(
-        (category) =>
-          getColors(category.colors)
+      CATEGORIES.flatMap((category) =>
+        getColors(category.colors)
       )
     )
   ];
@@ -128,17 +110,12 @@ function Categories() {
   // UNIQUE COST LIST
   const costList = [
     ...new Set(
-      CATEGORIES.map(
-        (category) => category.cost
-      )
+      CATEGORIES.map((category) => category.cost)
     )
-  ].sort(
-    (a, b) => Number(a) - Number(b)
-  );
+  ].sort((a, b) => Number(a) - Number(b));
 
   // CLEAR ALL FILTERS
   const clearFilters = () => {
-
     setFilteredValues({
       name: "",
       colors: "",
@@ -149,9 +126,19 @@ function Categories() {
   };
 
   return (
-    <div>
+    <div className="categories-page">
 
-      {/* SEARCH */}
+      {/* =========================
+            NAVBAR
+      ========================= */}
+
+      <Navbar />
+
+
+      {/* =========================
+            SEARCH
+      ========================= */}
+
       <div className="search-container">
 
         <Input
@@ -164,56 +151,82 @@ function Categories() {
 
       </div>
 
-      {/* FILTERS */}
+
+      {/* =========================
+            FILTERS
+      ========================= */}
+
       <div className="filters-container">
 
         {/* FLOWER NAME */}
-        <Select
-          value={filteredValues.name}
-          onChange={(e) =>
-            setFilteredValues({
-              ...filteredValues,
-              name: e.target.value
-            })
-          }
-          options={nameList}
-          placeholder="Select Flower"
-        />
+        <div className="filter-box">
+
+          <Select
+            value={filteredValues.name}
+            onChange={(e) =>
+              setFilteredValues({
+                ...filteredValues,
+                name: e.target.value
+              })
+            }
+            options={nameList}
+            placeholder="Select Flower"
+          />
+
+        </div>
+
 
         {/* COLOR */}
-        <Select
-          value={filteredValues.colors}
-          onChange={(e) =>
-            setFilteredValues({
-              ...filteredValues,
-              colors: e.target.value
-            })
-          }
-          options={colorsList}
-          placeholder="Select Colors"
-        />
+        <div className="filter-box">
+
+          <Select
+            value={filteredValues.colors}
+            onChange={(e) =>
+              setFilteredValues({
+                ...filteredValues,
+                colors: e.target.value
+              })
+            }
+            options={colorsList}
+            placeholder="Select Colors"
+          />
+
+        </div>
+
 
         {/* COST */}
-        <Select
-          value={filteredValues.cost}
-          onChange={(e) =>
-            setFilteredValues({
-              ...filteredValues,
-              cost: e.target.value
-            })
-          }
-          options={costList}
-          placeholder="Select Cost"
-        />
+        <div className="filter-box">
+
+          <Select
+            value={filteredValues.cost}
+            onChange={(e) =>
+              setFilteredValues({
+                ...filteredValues,
+                cost: e.target.value
+              })
+            }
+            options={costList}
+            placeholder="Select Cost"
+          />
+
+        </div>
+
 
         {/* CLEAR FILTER BUTTON */}
-        <button onClick={clearFilters}>
+        <button
+          className="clear-filter-button"
+          onClick={clearFilters}
+        >
           Clear Filters
         </button>
 
       </div>
 
-      {/* FLOWER CARDS */}
+
+      {/* =========================
+            FLOWER CARDS
+      ========================= */}
+
       <div className="categories-container">
 
         {categories.length > 0 ? (
@@ -255,6 +268,13 @@ function Categories() {
         )}
 
       </div>
+
+
+      {/* =========================
+            FOOTER
+      ========================= */}
+
+      <Footer />
 
     </div>
   );

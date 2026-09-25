@@ -1,0 +1,8 @@
+.about-page{
+     width: 100%;
+    min-height: 100vh;
+
+    background-color: #faf3f5;
+
+    box-sizing: border-box;
+}

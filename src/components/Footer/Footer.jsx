@@ -2,7 +2,9 @@ import "./Footer.css";
 
 function Footer() {
     return (
-        <div>Footer</div>
+        <div className="footer">
+            <p className="text">© {new Date().getFullYear()} Flora Explorer. All rights reserved.</p>
+        </div>
     )
 }
 

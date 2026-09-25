@@ -1,7 +1,8 @@
-
 import { useEffect, useState } from "react";
 import "./Categories_Details.css";
 import { useParams } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 
 import {
   CATEGORIES,
@@ -64,6 +65,12 @@ function Categories_Details() {
 
   return (
     <div className="details-page">
+
+      {/* =========================
+            NAVBAR
+      ========================= */}
+
+      <Navbar />
 
 
       {/* =========================
@@ -244,6 +251,13 @@ function Categories_Details() {
 
 
       </div>
+
+
+      {/* =========================
+            FOOTER
+      ========================= */}
+
+      <Footer />
 
     </div>
   );

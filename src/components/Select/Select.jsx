@@ -1,7 +1,7 @@
 import "./Select.css";
 
 function Select({ value, onChange, options, placeholder }) {
-
+    
     // Remove duplicate options
     const uniqueOptions = [...new Set(options)];
 
@@ -17,12 +17,16 @@ function Select({ value, onChange, options, placeholder }) {
 
             {uniqueOptions.map((option, index) => {
 
+                // Empty option skip
                 if (!option) {
                     return null;
                 }
 
                 return (
-                    <option key={index} value={option}>
+                    <option
+                        key={index}
+                        value={option}
+                    >
                         {option}
                     </option>
                 );
